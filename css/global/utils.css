@@ -1,0 +1,157 @@
+.w-full {
+  width: 100%;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.overline {
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+.mono {
+  font-family: "Source Code Pro", monospace;
+}
+
+.list-style-none {
+  list-style-type: none;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.py-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-0.\5 {
+  padding: 0.5rem;
+  /* margin: 0.5rem; */
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* 4 = 1rem = 16px; 1 = 0.25rem = 4px */
+.my-0\.5{
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-3\.75 {
+  margin-bottom: 3.75rem;
+}
+
+.text-primary-regular {
+  color: var(--primary-regular);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.text-white {
+  color: var(--white)
+}
+
+.bg-primary-darker {
+  background-color: var(--primary-darker);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-0\.5 {
+  gap: 0.5rem;
+}
+
+.gap-3\.75 {
+  gap: 3.75rem;
+}
+
+.options-container {
+  border-right: 1px solid #E5E5E5;
+  border-top: 1px solid #E5E5E5;
+  width: 230px;
+}
+
+.list-container {
+  display: flex;
+  border-top: 1px solid #E5E5E5;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-note {
+  width: 600px;
+  margin-top: 1rem;
+  margin-bottom: 3.75rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 20px;
+}
+
+.new-note > input,
+.new-note > textarea {
+  border: none;
+}
+
+.notes-container {
+  padding: 0%;
+  width: 100%;
+}
+
+.align-item__center {
+  align-items: center;
+  margin-left: 18px;
+}
+
+.svg-custom {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jc__space-between {
+  justify-content: space-between;
+}
+
+.border-color-white {
+  border-color: white;
+  background-color: white;
+  border-style: none;
+}

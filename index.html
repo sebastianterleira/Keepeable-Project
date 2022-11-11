@@ -9,17 +9,145 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/style.css">
-  </head>
   <body>
     <header>
-      <nav class="navbar custom-bg-color1">
-        <div class="container">
+      <nav class="navbar">
           <a class="navbar-brand" href="#">
-            <img src="./css/img/keepable.svg" alt="Bootstrap">
+            <img src="/css/imagen/keepable.svg" alt="Bootstrap">
           </a>
-          <p class="white">Text</p>
-        </div>
+          <p class="white">Welcome to {keepable}</p>
       </nav>
     </header>
+    <!-- Opciones de notes y trash -->
+    <!-- options = [{option: notes, status: true},
+                    {option: trash, status: false}] -->
+    <div class="flex-row">
+      <section style="color: white;" class="options-container flex-column">
+        
+        <div>
+          <p>Notes</p>
+        </div>
+  
+        <div>
+          <p>Trash</p>
+        </div> 
+      </section>
+      
+      <!-- lista de notas -->
+      <div class="list-container">
+        <form class="new-note" action="">
+          <input type="text" id="title" name="title" placeholder="The title for my new note"><br><br>
+          <textarea id="note" name="note" rows="4" cols="50" placeholder="This is the body for the note."></textarea>
+          <div class="flex-row jc__space-between">
+            <figure>
+              <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+            </figure>
+            <input class="border-color-white" type="submit" value="Keep it!">
+          </div>
+        </form>
+  
+        
+        <ul class="notes-container article-summary__content">
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p class="line-height-1.25">This is the body for the note.</p>
+            
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+            </div>
+          </li>
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+  
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+              </div>
+          </li>
+          <li >
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+              </div>
+          </li>
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+              </div>
+          </li>
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
+
+<!-- 
+  css:
+  .white {
+    background-color: #ffffff;
+  }
+
+figure = document.createElement("figure")
+il.className("white");
+
+li.className("pink");
+
+li.className("green");
+
+li.className("skyBlue");
+
+figure(event, ()=> {
+  li.className("green");
+})
+
+-->
