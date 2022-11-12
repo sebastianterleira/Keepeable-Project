@@ -227,6 +227,10 @@ input[type='color'] {
   opacity: 0.5;
 }
 
+.icon-trash {
+  filter: invert(98%) sepia(100%) saturate(9%) hue-rotate(175deg) brightness(103%) contrast(105%);
+}
+
 /* .palete {
   background-image: url(./css/imagen/icon-paleteishon.svg);
   background-repeat: no-repeat;
