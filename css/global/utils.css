@@ -136,9 +136,9 @@
   width: 100%;
 }
 
-.align-item__center {
-  align-items: center;
-  margin-left: 18px;
+.align-item__end {
+  flex-grow: 1;
+  align-items: end;
 }
 
 .svg-custom {
@@ -154,4 +154,16 @@
   border-color: white;
   background-color: white;
   border-style: none;
+}
+
+.white {
+  background-color: white;
+}
+
+.red {
+  background-color: red;
+}
+
+.green{
+  background-color: green;
 }

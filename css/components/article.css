@@ -1,7 +1,7 @@
 
-.article {
-  /* font-size: 18px; */
-}
+/* .article {
+  /* font-size: 18px; 
+} */
 
 .article h1 {
   font-size: 36px;
@@ -85,7 +85,7 @@
 
 /* Article Summary */
 
-.article-summary {}
+/* .article-summary {} */
 
 .article-summary__header {
   text-align: center;
@@ -102,13 +102,16 @@
   padding: 0 30px;
 }
 
-.article-summary__card {
-  /* border: 1px solid red; */
-}
+/* .article-summary__card {
+  /* border: 1px solid red;
+}*/
 
 .article-summary__content > li {
-  border: 1px solid red;
+  border-radius: 8px;
+  width: 260px;
+  height: 260px;
   text-decoration: none;
   list-style:none;
+  padding: 20px 20px 2px 20px;
   margin: 0;
 }
