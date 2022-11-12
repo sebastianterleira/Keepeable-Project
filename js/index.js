@@ -9,7 +9,7 @@ const notes = [
 function renderNotes(notes) {
   const ul = document.querySelector("ul");
 
-  ul.innerHTML = '';
+  ul.innerHTML = "";
   
   for (let i = 0; i < notes.length; i++) {
     const li = document.createElement("li");
@@ -35,38 +35,35 @@ function renderNotes(notes) {
     
     li.innerHTML = liTemplate;
     ul.append(li);
-
+    
     document.querySelector(`#choseColor${i}`).addEventListener("click", () => {
       console.log("aqui estoy");
     });
-
+    
     document.querySelector(`#deleteIcon${i}`).addEventListener("click", () => {
       deleteNote(i);
     });
   }
+}
 
-  const form = document.querySelector("form");
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    createNewNote(event.target.elements);
-    event.target.reset();
-    console.log(notes);
-  });
+const form = document.querySelector("form");
 
+form.addEventListener("submit", handleSubmit);
 
+function handleSubmit(event) {
+event.preventDefault()
+const data = event.target.elements;
+const newNote = {
+  title: data.title.value,
+  body:   data.note.value,
+  color: data.color.value,
+};
+notes.push(newNote);
+event.target.reset();
+renderNotes(notes);
 }
 
 renderNotes(notes);
-
-function createNewNote(data) {
-  const newNote = {
-    title: data.title.value,
-    body: data.note.value,
-    color: data.color.value,
-  }
-  notes.push(newNote);
-  renderNotes(notes);
-}
 
 function deleteNote(i) {
   notes.splice(i, 1);
