@@ -174,3 +174,68 @@
   width: 280px;
   height: 48px;
 }
+
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.menu-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-color-style-none {
+  appearance: none;
+  /* background-color: black; */
+  border-style: none;
+    border-color: none;
+    border-image: none;
+    color: none;
+    -webkit-appearance: none;
+}
+
+input[type='color'] {
+  /* padding: 0;
+  width: 50%;
+  height: 50%;
+  margin: -25%;
+  opacity: 0.5; */
+  /* background: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none; */
+  background-color: transparent;
+  border: 6px;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width:5px;
+  color:transparent;
+  cursor:default;
+  background-image: url("./css/imagen/icon-paleteishon.svg");
+  /* background-repeat: no-repeat; */
+}
+
+.cp_wrapper {
+  overflow: hidden;
+  width: 2em;
+  height: 2em;
+  border-radius: 80%;
+  box-shadow: 1px 1px 3px 0px white;
+  opacity: 0.5;
+}
+
+.icon-trash {
+  filter: invert(98%) sepia(100%) saturate(9%) hue-rotate(175deg) brightness(103%) contrast(105%);
+}
+
+/* .palete {
+  background-image: url(./css/imagen/icon-paleteishon.svg);
+  background-repeat: no-repeat;
+  background-position: <left|right>;
+  padding-<left|right>: 12px;
+} */
+
+
