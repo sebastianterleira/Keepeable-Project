@@ -8,21 +8,23 @@ const notes = [
 
 function renderNotes(notes) {
   const ul = document.querySelector("ul");
-  ul.innerHTML = "";
 
-  for (note of notes) {
+  ul.innerHTML = '';
+  
+  for (let i = 0; i < notes.length; i++) {
     const li = document.createElement("li");
-    li.classList.add(note.color, "flex-column");
+    li.classList.add("flex-column");
+    li.setAttribute("style", `background-color: ${notes[i].color}`)
   
     const liTemplate = `
-    <h1 class="text-sm bold">${note.title}</h1>
-    <p class="line-height-1.25">${note.body}</p>
+    <h1 class="text-sm bold">${notes[i].title}</h1>
+    <p class="line-height-1.25">${notes[i].body}</p>
   
     <div class="flex-row align-item__end">
-      <figure>
-        <img id="choseColor" class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+      <figure id="choseColor${i}">
+        <img  class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
       </figure>
-      <figure>
+      <figure id="deleteIcon${i}">
         <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
       </figure>
       <figure>
@@ -30,34 +32,43 @@ function renderNotes(notes) {
       </figure>
     </div>
     `
-  
+    
     li.innerHTML = liTemplate;
     ul.append(li);
+
+    document.querySelector(`#choseColor${i}`).addEventListener("click", () => {
+      console.log("aqui estoy");
+    });
+
+    document.querySelector(`#deleteIcon${i}`).addEventListener("click", () => {
+      deleteNote(i);
+    });
   }
 
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     createNewNote(event.target.elements);
+    event.target.reset();
+    console.log(notes);
   });
 
-  const choseColor = document.querySelector("choseColor");
-  choseColor.addEventListener("click", (event) => {
-    event.preventDefault();
-    createNewNote(event.target.elements);
-  });
+
 }
 
 renderNotes(notes);
 
 function createNewNote(data) {
-  console.log(data);
-  newNote = {
+  const newNote = {
     title: data.title.value,
     body: data.note.value,
-    color: "white",
+    color: data.color.value,
   }
-
   notes.push(newNote);
+  renderNotes(notes);
+}
+
+function deleteNote(i) {
+  notes.splice(i, 1);
   renderNotes(notes);
 }
