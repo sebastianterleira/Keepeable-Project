@@ -16,18 +16,16 @@
           <p>Welcome to {keepable}</p>
       </nav>
     </header>
-    <!-- Opciones de notes y trash -->
-    <!-- options = [{option: notes, status: true},
-                    {option: trash, status: false}] -->
+
     <div class="flex-row">
       <section style="color: white;" class="options-container flex-column">
         
-        <div>
-          <p>Notes</p>
+        <div id="notesOption">
+          <a href="#" class="text-decoration-none" style="color: white;"><img class="svg-custom button-circular" src="./css/imagen/icon-key.svg" alt="">Notes</a>
         </div>
   
-        <div>
-          <p>Trash</p>
+        <div id="trash">
+          <a href="#" class="text-decoration-none" style="color: white;"><img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">Trash</a>
         </div> 
       </section>
       
@@ -37,10 +35,10 @@
           <input type="text" id="title" name="title" placeholder="The title for my new note"><br><br>
           <textarea id="note" name="note" rows="4" cols="50" placeholder="This is the body for the note."></textarea>
           <div class="flex-row jc__space-between">
-            <figure>
+            <a href="#" id="choseColor" class="choseColor__close">
               <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
               <input type="color" id="color">
-            </figure>
+            </a>
             <input class="border-color-white" type="submit" value="Keep it!">
           </div>
         </form>
@@ -131,24 +129,3 @@
     <script src="/js/index.js"></script>
   </body>
 </html>
-
-<!-- 
-  css:
-  .white {
-    background-color: #ffffff;
-  }
-
-figure = document.createElement("figure")
-il.className("white");
-
-li.className("pink");
-
-li.className("green");
-
-li.className("skyBlue");
-
-figure(event, ()=> {
-  li.className("green");
-})
-
--->
