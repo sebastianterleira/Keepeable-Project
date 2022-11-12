@@ -167,3 +167,10 @@
 .green{
   background-color: green;
 }
+
+.options-container > * {
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 280px;
+  height: 48px;
+}
