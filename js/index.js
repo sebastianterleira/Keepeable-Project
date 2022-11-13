@@ -87,6 +87,7 @@ const form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
 
+
 let choseColor =  document.querySelector(`#choseColor`)
 choseColor.addEventListener("click", (event) => {
   console.log("si esta dando click.");

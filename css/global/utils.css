@@ -207,11 +207,69 @@
 .modal-container__open {
   display: block;
   position: absolute;
-  border: 1px solid black;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 4px 5px;
 }
 
 .modal-container__open > input {
-  background-color: red;
+  /* quitar valores propios de un radio */
+  appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+  /*  */
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  color: red;
+}
+
+.modal-container__open input:nth-child(1) {
+  background-color: #b6b6b6;
+}
+
+.modal-container__open input:nth-child(2) {
+  background-color: #F28B82;
+}
+
+.modal-container__open input:nth-child(3) {
+  background-color: #FBBC04;
+}
+
+.modal-container__open input:nth-child(4) {
+  background-color: #FFF475;
+}
+
+.modal-container__open input:nth-child(5) {
+  background-color: #CCFF90;
+}
+
+.modal-container__open input:nth-child(6) {
+  background-color: #A7FFEB;
+}
+
+.modal-container__open input:nth-child(7) {
+  background-color: #CBF0F8;
+}
+
+.modal-container__open input:nth-child(8) {
+  background-color: #AECBFA;
+}
+
+.modal-container__open input:nth-child(9) {
+  background-color: #D7AEFB;
+}
+
+.modal-container__open input:nth-child(10) {
+  background-color: #FDCFE8;
+}
+
+input[type="radio"]:checked {
+  border: 2px solid black;
+}
+
+input[type="radio"]:hover {
+  opacity: 75%;
+  
 }
