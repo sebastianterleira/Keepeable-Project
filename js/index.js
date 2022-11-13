@@ -63,20 +63,24 @@ function renderNotes(notes) {
         restoreNote(i);
       });
     } else {
-      document.querySelector(`#choseColor${i}`).addEventListener("click", () => {
-        console.log("diste click");
+      document.querySelector(`#choseColor${i}`).style.position = "relative";
+      document.querySelector(`#choseColor${i}`).addEventListener("click", (event) => {
 
-        // const modal = document.querySelector("#modal");
-        // const choseColor =  document.querySelector(`#choseColor`)
-
-        // choseColor.addEventListener("click", () => {
-        //   modal.style.bottom = "50px";
-        //   modal.style.right = "465px";
-        //   modal.className = "modal-container__open";
-        // });
+        console.log(event);
+        console.log(event.pageX);
+        console.log(event.pageY);
+        // console.log("diste click linea  72  inside event listener ");
+        // let rect = event.target.getBoundingClientRect();
+        let x = event.pageX; //x position within the element.
+        let y = event.pageY;
+        modal.style.top = `${(y - 375)}px`;
+        modal.style.left = `${x - 670}px`;
+        // modal.style.top = `${event.screenX}px`;
+        // modal.style.right = `${event.screenY}px`;
+        modal.className = "modal-container__open";
       });
     }
-  }  
+  }
 }
 
 // atrapando mi Modal:
@@ -86,17 +90,13 @@ const modal = document.querySelector("#modal");
 const form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
-
-
 let choseColor =  document.querySelector(`#choseColor`)
-choseColor.addEventListener("click", (event) => {
+choseColor.addEventListener("click", () => {
   console.log("si esta dando click.");
-  console.log(event);
   modal.style.bottom = "50px";
   modal.style.right = "465px";
   modal.className = "modal-container__open";
 });
-
 
 function handleSubmit(event) {
   event.preventDefault()
@@ -178,18 +178,26 @@ notesOption.addEventListener("click", () => {
   <input type="text" id="title" name="title" placeholder="The title for my new note"><br><br>
   <textarea id="note" name="note" rows="4" cols="50" placeholder="This is the body for the note."></textarea>
   <div class="flex-row jc__space-between" style="position: relative;">
-
     <!-- modaaaaaaaaaaaaaal -->
     <div id="modal" class="modal-container" style="background-color: white; width: 155px; height: 65px;">
-      <input type="color" id="color" class="cp_wrapper input-color-style-none" name="cp_3" value="#8888ff">
+      <input type="radio" id="color" name="color" value="#b6b6b6">
+      <input type="radio" id="color" name="color" value="#F28B82">
+      <input type="radio" id="color" name="color" value="#FBBC04">
+      <input type="radio" id="color" name="color"  value="#FFF475">
+      <input type="radio" id="color" name="color" value="#CCFF90">
+      <input type="radio" id="color" name="color" value="#A7FFEB">
+      <input type="radio" id="color" name="color" value="#CBF0F8">
+      <input type="radio" id="color" name="color" value="#AECBFA">
+      <input type="radio" id="color" name="color" value="#D7AEFB">
+      <input type="radio" id="color" name="color" value="#FDCFE8">
+      <input type="radio" id="color" name="color" value="#ffffff" checked hidden>
     </div>
     <!-- fin del modal -->
-
     <a href="#" id="choseColor">
       <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
     </a>
-
     <input class="border-color-white" type="submit" value="Keep it!">
+  </div>
   </div>
   `;
 
