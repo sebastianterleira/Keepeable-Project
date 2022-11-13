@@ -112,6 +112,7 @@ function handleSubmit(event) {
   notesArray.push(newNote);
   localStorage.setItem("notes", JSON.stringify(notesArray));
 
+  console.log(event)
   renderNotes(note);
   event.target.reset();
 }
