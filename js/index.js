@@ -65,18 +65,13 @@ function renderNotes(notes) {
     } else {
       document.querySelector(`#choseColor${i}`).style.position = "relative";
       document.querySelector(`#choseColor${i}`).addEventListener("click", (event) => {
-
         console.log(event);
         console.log(event.pageX);
         console.log(event.pageY);
-        // console.log("diste click linea  72  inside event listener ");
-        // let rect = event.target.getBoundingClientRect();
-        let x = event.pageX; //x position within the element.
+        let x = event.pageX;
         let y = event.pageY;
         modal.style.top = `${(y - 375)}px`;
         modal.style.left = `${x - 670}px`;
-        // modal.style.top = `${event.screenX}px`;
-        // modal.style.right = `${event.screenY}px`;
         modal.className = "modal-container__open";
       });
     }
