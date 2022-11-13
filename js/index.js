@@ -20,6 +20,7 @@ function renderNotes(notes) {
     const li = document.createElement("li");
     li.classList.add("flex-column");
     li.setAttribute("style", `background-color: ${notes[i].color}`)
+    li.style.position = "relative";
   
     const liTemplate = `
     <h1 class="text-sm bold">${notes[i].title}</h1>
@@ -28,6 +29,19 @@ function renderNotes(notes) {
     <div class="flex-row align-item__end">
       <a href="#" id="choseColor${i}">
         <img  class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+        <div id="modal" class="modal-container" style="background-color: white; width: 155px; height: 65px;">
+          <input type="radio" id="color" name="color" value="#b6b6b6">
+          <input type="radio" id="color" name="color" value="#F28B82">
+          <input type="radio" id="color" name="color" value="#FBBC04">
+          <input type="radio" id="color" name="color"  value="#FFF475">
+          <input type="radio" id="color" name="color" value="#CCFF90">
+          <input type="radio" id="color" name="color" value="#A7FFEB">
+          <input type="radio" id="color" name="color" value="#CBF0F8">
+          <input type="radio" id="color" name="color" value="#AECBFA">
+          <input type="radio" id="color" name="color" value="#D7AEFB">
+          <input type="radio" id="color" name="color" value="#FDCFE8">
+          <input type="radio" id="color" name="color" value="#ffffff" checked hidden>
+        </div>
       </a>
       <a href="#" id="deleteIcon${i}">
         <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
@@ -39,7 +53,7 @@ function renderNotes(notes) {
     <h1 class="text-sm bold">${notes[i].title}</h1>
     <p class="line-height-1.25">${notes[i].body}</p>
   
-    <div class="flex-row align-item__end">
+    <div class="flex-row align-item__end" style="position: relative;">
 
       <a href="#" id="deleteIcon${i}">
         <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
@@ -64,16 +78,15 @@ function renderNotes(notes) {
       });
     } else {
       document.querySelector(`#choseColor${i}`).style.position = "relative";
+      document.querySelector("#modal").style.position = "absolute";
       document.querySelector(`#choseColor${i}`).addEventListener("click", (event) => {
-        console.log(event);
-        console.log(event.pageX);
-        console.log(event.pageY);
-        let x = event.pageX;
-        let y = event.pageY;
-        modal.style.top = `${(y - 375)}px`;
-        modal.style.left = `${x - 670}px`;
-        modal.className = "modal-container__open";
+        console.log("si esta dando click.");
+        document.querySelector("#modal").style.top = `${(event.pageY - 365)}px`;
+        document.querySelector("#modal").style.left = `${(event.pageX - 683)}px`;
+        document.querySelector("#modal").className = "modal-container__open";
       });
+
+      document.querySelector("#modal")
     }
   }
 }
