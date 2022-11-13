@@ -1,4 +1,4 @@
-const notes = [
+let notesArray = [
   {title: "first noteeeeeeeeee", body:"This is the body for the note.", color: "white"},
   {title: "This is the title", body:"This is the body for the note.", color: "orange"},
   {title: "This is the title", body:"This is the body for the note.", color: "pink"},
@@ -6,7 +6,7 @@ const notes = [
   {title: "This is the title", body:"This is the body for the note.", color: "red"}
 ];
 
-const trashNotes = [
+let trashArray = [
   {title: "This is the trash note", body:"This is the body for the note.", color: "blue"},
   {title: "This is the trash note", body:"This is the body for the note.", color: "skyblue"}
 ];
@@ -50,76 +50,166 @@ function renderNotes(notes) {
     </div>
     `
     
-    notes == trashNotes ? li.innerHTML = liTemplateTrash : li.innerHTML = liTemplate;
+    notes == trashArray ? li.innerHTML = liTemplateTrash : li.innerHTML = liTemplate;
     
     ul.append(li);
     
     document.querySelector(`#deleteIcon${i}`).addEventListener("click", () => {
-      notes == trashNotes ? deleteNote(i) : toTrashNote(i);
+      notes == trashArray ? deleteNote(i) : toTrashNote(i);
     });
     
-     if (notes == trashNotes) {
+     if (notes == trashArray) {
       document.querySelector(`#restoreIcon${i}`).addEventListener("click", () => {
         restoreNote(i);
       });
     } else {
       document.querySelector(`#choseColor${i}`).addEventListener("click", () => {
         console.log("diste click");
+
+        // const modal = document.querySelector("#modal");
+        // const choseColor =  document.querySelector(`#choseColor`)
+
+        // choseColor.addEventListener("click", () => {
+        //   modal.style.bottom = "50px";
+        //   modal.style.right = "465px";
+        //   modal.className = "modal-container__open";
+        // });
       });
     }
-  }
-
-  const choseColor =  document.querySelector(`#choseColor`)
-  choseColor.addEventListener("click", () => {
-    console.log("si esta dando click.");
-    // choseColor.className("choseColor__close");
-  });
-  
+  }  
 }
 
+// atrapando mi Modal:
+const modal = document.querySelector("#modal");
+
+// atrapando mi Form:
 const form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
+
+let choseColor =  document.querySelector(`#choseColor`)
+choseColor.addEventListener("click", (event) => {
+  console.log("si esta dando click.");
+  console.log(event);
+  modal.style.bottom = "50px";
+  modal.style.right = "465px";
+  modal.className = "modal-container__open";
+});
+
+
 function handleSubmit(event) {
-event.preventDefault()
-const data = event.target.elements;
-const newNote = {
-  title: data.title.value,
-  body:  data.note.value,
-  color: data.color.value,
-};
-notes.push(newNote);
-event.target.reset();
-renderNotes(notes);
+  event.preventDefault()
+  const data = event.target.elements;
+  const newNote = {
+    title: data.title.value,
+    body:  data.note.value,
+    color: data.color.value,
+  };
+
+  if (notesFromStorage) {
+    notesArray = JSON.parse(localStorage.getItem("notes"));
+  }
+  notesArray.push(newNote);
+  localStorage.setItem("notes", JSON.stringify(notesArray));
+
+  renderNotes(note);
+  event.target.reset();
 }
 
 function toTrashNote(i) {
-  let noteToTrash = notes[i];
-  trashNotes.push(noteToTrash);
-  notes.splice(i, 1);
-  renderNotes(notes);
+  let noteToTrash = notesArray[i];
+
+  if (trashFromStorage) {
+    trashArray = JSON.parse(localStorage.getItem("trash"));
+  }
+  trashArray.push(noteToTrash);
+  localStorage.setItem("trash", JSON.stringify(trashArray))
+
+  if (notesFromStorage) {
+    notesArray = JSON.parse(localStorage.getItem("notes"));
+  }
+  notesArray.splice(i, 1);
+  localStorage.setItem("notes", JSON.stringify(notesArray))
+
+  renderNotes(note);
 }
 
 function deleteNote(i) {
-  trashNotes.splice(i, 1);
-  renderNotes(trashNotes);
+  if (trashFromStorage) {
+    trashArray = JSON.parse(localStorage.getItem("trash"));
+  }
+  trashArray.splice(i, 1);
+  renderNotes(trash);
 }
 
 function restoreNote(i) {
-  let noteToIndex = trashNotes[i];
-  notes.push(noteToIndex);
-  trashNotes.splice(i, 1);
-  renderNotes(trashNotes);
+  let noteToIndex = trashArray[i];
+  if (notesFromStorage) {
+    notesArray = JSON.parse(localStorage.getItem("notes"));
+  }
+  notesArray.push(noteToIndex);
+  if (trashFromStorage) {
+    trashArray = JSON.parse(localStorage.getItem("trash"));
+  }
+  trashArray.splice(i, 1);
+  renderNotes(trash);
 }
 
-const trash = document.querySelector("#trash");
-trash.addEventListener("click", () => {
-  renderNotes(trashNotes);
+const trashOption = document.querySelector("#trash");
+trashOption.addEventListener("click", () => {
+  trashOption.className = "clicked";
+  notesOption.className = "";
+  form.innerHTML = "";
+  form.className = "";
+  if (trashFromStorage) {
+    trashArray = JSON.parse(localStorage.getItem("trash"));
+  };
+  renderNotes(trash);
 });
 
 const notesOption = document.querySelector("#notesOption");
 notesOption.addEventListener("click", () => {
-  renderNotes(notes);
+  notesOption.className = "clicked";
+  trashOption.className = "";
+  form.className = "new-note";
+  form.innerHTML = `
+  <input type="text" id="title" name="title" placeholder="The title for my new note"><br><br>
+  <textarea id="note" name="note" rows="4" cols="50" placeholder="This is the body for the note."></textarea>
+  <div class="flex-row jc__space-between" style="position: relative;">
+
+    <!-- modaaaaaaaaaaaaaal -->
+    <div id="modal" class="modal-container" style="background-color: white; width: 155px; height: 65px;">
+      <input type="color" id="color" class="cp_wrapper input-color-style-none" name="cp_3" value="#8888ff">
+    </div>
+    <!-- fin del modal -->
+
+    <a href="#" id="choseColor">
+      <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+    </a>
+
+    <input class="border-color-white" type="submit" value="Keep it!">
+  </div>
+  `;
+
+  // atrapando mi Modal:
+  const modal = document.querySelector("#modal");
+  const choseColor =  document.querySelector(`#choseColor`)
+  choseColor.addEventListener("click", () => {
+  modal.style.bottom = "50px";
+  modal.style.right = "465px";
+  modal.className = "modal-container__open";
 });
 
-renderNotes(notes);
+  if (notesFromStorage) {
+    notesArray = JSON.parse(localStorage.getItem("notes"));
+  }
+  renderNotes(note);
+});
+
+const notesFromStorage = JSON.parse(localStorage.getItem("notes"));
+const trashFromStorage = JSON.parse(localStorage.getItem("trash"));
+
+const note = notesFromStorage || notesArray;
+const trash = trashFromStorage || trashArray;
+
+renderNotes(note);
