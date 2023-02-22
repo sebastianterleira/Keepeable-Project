@@ -1,0 +1,274 @@
+.w-full {
+  width: 100%;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.overline {
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+.mono {
+  font-family: "Source Code Pro", monospace;
+}
+
+.list-style-none {
+  list-style-type: none;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.py-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-0.\5 {
+  padding: 0.5rem;
+  /* margin: 0.5rem; */
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* 4 = 1rem = 16px; 1 = 0.25rem = 4px */
+.my-0\.5{
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-3\.75 {
+  margin-bottom: 3.75rem;
+}
+
+.text-primary-regular {
+  color: var(--primary-regular);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.text-white {
+  color: var(--white)
+}
+
+.bg-primary-darker {
+  background-color: var(--primary-darker);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-0\.5 {
+  gap: 0.5rem;
+}
+
+.gap-3\.75 {
+  gap: 3.75rem;
+}
+
+.list-container {
+  display: flex;
+  border-top: 1px solid #E5E5E5;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-note {
+  width: 600px;
+  margin-top: 1rem;
+  margin-bottom: 3.75rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 20px;
+}
+
+.new-note > input,
+.new-note > textarea {
+  border: none;
+  resize: none;
+}
+
+.notes-container {
+  padding: 0%;
+  width: 100%;
+}
+
+.align-item__end {
+  flex-grow: 1;
+  align-items: end;
+}
+
+.svg-custom {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jc__space-between {
+  justify-content: space-between;
+}
+
+.border-color-white {
+  border-color: white;
+  background-color: white;
+  border-style: none;
+}
+
+.white {
+  background-color: white;
+}
+
+.red {
+  background-color: red;
+}
+
+.green{
+  background-color: green;
+}
+
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-trash {
+  filter: invert(98%) sepia(100%) saturate(9%) hue-rotate(175deg) brightness(103%) contrast(105%);
+}
+
+.options-container {
+  border-right: 1px solid #E5E5E5;
+  border-top: 1px solid #E5E5E5;
+  width: 230px;
+  padding-top: 20px;
+}
+
+.options-container > * {
+  width: 280px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.clicked {
+  background-color: #999B9E;
+  width: 100%;
+  display: absolute;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.modal-container {
+  display: none;
+}
+
+.modal-container__open {
+  display: block;
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 4px 5px;
+  z-index : 1;
+}
+
+.modal-container__open > input {
+  /* quitar valores propios de un radio */
+  appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+  /*  */
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  color: red;
+}
+
+.modal-container__open input:nth-child(1) {
+  background-color: #b6b6b6;
+}
+
+.modal-container__open input:nth-child(2) {
+  background-color: #F28B82;
+}
+
+.modal-container__open input:nth-child(3) {
+  background-color: #FBBC04;
+}
+
+.modal-container__open input:nth-child(4) {
+  background-color: #FFF475;
+}
+
+.modal-container__open input:nth-child(5) {
+  background-color: #CCFF90;
+}
+
+.modal-container__open input:nth-child(6) {
+  background-color: #A7FFEB;
+}
+
+.modal-container__open input:nth-child(7) {
+  background-color: #CBF0F8;
+}
+
+.modal-container__open input:nth-child(8) {
+  background-color: #AECBFA;
+}
+
+.modal-container__open input:nth-child(9) {
+  background-color: #D7AEFB;
+}
+
+.modal-container__open input:nth-child(10) {
+  background-color: #FDCFE8;
+}
+
+input[type="radio"]:checked {
+  border: 2px solid black;
+}
+
+input[type="radio"]:hover {
+  opacity: 75%;
+}

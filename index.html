@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keepable</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+          <a class="navbar-brand" href="#">
+            <img src="/css/imagen/keepable.svg" alt="Bootstrap">
+          </a>
+          <p>Welcome to {keepable}</p>
+      </nav>
+    </header>
+
+    <div class="flex-row">
+      <section style="color: white;" class="options-container flex-column">
+        <div id="notesOption" class="clicked">
+          <a href="#" class="text-decoration-none flex" style="color: white;"><img class="svg-custom px-20" src="./css/imagen/icon-key.svg" alt="">Notes</a>
+        </div>
+  
+        <div id="trash">
+          <a href="#" class="text-decoration-none flex" style="color: white;"><img class="svg-custom px-20 icon-trash"  src="./css/imagen/delete-bin-line.svg" alt="">Trash</a>
+        </div> 
+      </section>
+      
+      <!-- lista de notas -->
+      <div class="list-container">
+        <form class="new-note"  style="position: relative;">
+          <input type="text" id="title" name="title" placeholder="The title for my new note"><br><br>
+          <textarea id="note" name="note" rows="4" cols="50" placeholder="This is the body for the note."></textarea>
+          <div class="flex-row jc__space-between" style="position: relative;">
+            <!-- modaaaaaaaaaaaaaal -->
+            <div id="modal" class="modal-container" style="background-color: white; width: 155px; height: 65px;">
+              <input type="radio" id="color" name="color" value="#b6b6b6">
+              <input type="radio" id="color" name="color" value="#F28B82">
+              <input type="radio" id="color" name="color" value="#FBBC04">
+              <input type="radio" id="color" name="color"  value="#FFF475">
+              <input type="radio" id="color" name="color" value="#CCFF90">
+              <input type="radio" id="color" name="color" value="#A7FFEB">
+              <input type="radio" id="color" name="color" value="#CBF0F8">
+              <input type="radio" id="color" name="color" value="#AECBFA">
+              <input type="radio" id="color" name="color" value="#D7AEFB">
+              <input type="radio" id="color" name="color" value="#FDCFE8">
+              <input type="radio" id="color" name="color" value="#ffffff" checked hidden>
+            </div>
+            <!-- fin del modal -->
+            <a href="#" id="choseColor">
+              <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+            </a>
+            <input class="border-color-white" type="submit" value="Keep it!">
+          </div>
+        </form>  
+        
+        <ul class="notes-container article-summary__content">
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p class="line-height-1.25">This is the body for the note.</p>
+            
+            <div class="flex-row align-item__center">
+              <figure id="choseColor">
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+            </div>
+          </li>
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+  
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+            </div>
+          </li>
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+              </div>
+          </li>
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+              </div>
+          </li>
+          <li>
+            <h1 class="text-sm bold">This is the title</h1>
+            <p>This is the body for the note.</p>
+            <div class="flex-row align-item__center">
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-paleteishon.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-trash.svg" alt="">
+              </figure>
+              <figure>
+                <img class="svg-custom button-circular" src="./css/imagen/icon-restored.svg" alt="">
+              </figure>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
